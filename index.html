@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gabriel Otávio de Oliveira — Engenharia de Produção | PCP | Supply Chain & Intralogística | Melhoria Contínua." />
+  <title>Gabriel Otávio de Oliveira | Engenharia de Produção</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <style>
+/* ============================================================
+   Currículo — modelo anterior (futurista discreto + capa LinkedIn)
+   ============================================================ */
+
+:root {
+  --ink: #0e141c;
+  --ink-soft: #1c2a38;
+  --slate: #5a6b7c;
+  --mist: #e8eef2;
+  --paper: #f3f6f8;
+  --white: #ffffff;
+  --forest: #1f8a6e;
+  --forest-deep: #146353;
+  --wood: #7a9aab;
+  --cyan: #3d9ead;
+  --glow: rgba(61, 158, 173, 0.35);
+  --line: rgba(14, 20, 28, 0.1);
+  --shadow: 0 24px 60px rgba(14, 20, 28, 0.14);
+
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --header-h: 4.25rem;
+  --max: 68rem;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3 { margin: 0; line-height: 1.15; font-weight: 600; }
+p { margin: 0; }
+
+/* Fundo futurista discreto */
+.fx {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fx__aurora {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 50% 40% at 15% 20%, rgba(31, 138, 110, 0.14), transparent 55%),
+    radial-gradient(ellipse 45% 35% at 85% 15%, rgba(61, 158, 173, 0.12), transparent 50%),
+    radial-gradient(ellipse 40% 45% at 70% 80%, rgba(122, 154, 171, 0.1), transparent 55%),
+    radial-gradient(ellipse 35% 30% at 20% 75%, rgba(31, 138, 110, 0.08), transparent 50%);
+  animation: aurora-shift 18s ease-in-out infinite alternate;
+  filter: blur(8px);
+}
+
+.fx__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(31, 138, 110, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 158, 173, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
+  animation: grid-drift 40s linear infinite;
+  opacity: 0.7;
+}
+
+.fx__scan {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(14, 20, 28, 0.015) 3px,
+    rgba(14, 20, 28, 0.015) 4px
+  );
+  opacity: 0.5;
+}
+
+.fx__particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  opacity: 0.028;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main, .site-header, .site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes aurora-shift {
+  from { transform: translate(-2%, -1%) scale(1); }
+  to { transform: translate(3%, 2%) scale(1.06); }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 64px 64px; }
+}
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  transition: background 0.35s var(--ease), backdrop-filter 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.site-header.is-scrolled {
+  background: rgba(243, 246, 248, 0.78);
+  backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  transition: color 0.3s var(--ease), text-shadow 0.3s var(--ease);
+}
+
+.site-header.on-cover .logo {
+  color: var(--white);
+  text-shadow: 0 0 20px rgba(126, 212, 196, 0.35);
+}
+
+.site-header.on-cover .site-nav a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.site-header.on-cover .site-nav a:hover,
+.site-header.on-cover .site-nav a.is-active {
+  color: var(--white);
+}
+
+.site-header.on-cover .site-nav a::after {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.site-header.is-scrolled .logo,
+.site-header:not(.on-cover) .logo {
+  color: var(--ink);
+  text-shadow: none;
+}
+
+.site-header.is-scrolled .site-nav a,
+.site-header:not(.on-cover) .site-nav a {
+  color: var(--slate);
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.site-nav a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--slate);
+  position: relative;
+  transition: color 0.25s var(--ease);
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--forest), var(--cyan));
+  transition: width 0.3s var(--ease);
+}
+
+.site-nav a:hover,
+.site-nav a.is-active { color: var(--ink); }
+
+.site-nav a:hover::after,
+.site-nav a.is-active::after { width: 100%; }
+
+.nav-toggle {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 1.4rem;
+  height: 2px;
+  background: var(--ink);
+  transition: transform 0.3s var(--ease);
+}
+
+.nav-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 4.5rem;
+  overflow: hidden;
+  color: var(--ink);
+  background: transparent;
+}
+
+.hero__cover {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: min(62vh, 34rem);
+  z-index: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 50%, rgba(31, 138, 110, 0.28), transparent 55%),
+    radial-gradient(ellipse 50% 70% at 80% 30%, rgba(61, 158, 173, 0.22), transparent 50%),
+    linear-gradient(135deg, #070b10 0%, #0f1a22 45%, #0c1f1c 100%);
+}
+
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+  transition: transform 0.15s linear;
+  pointer-events: none;
+}
+
+.hero__orb--1 {
+  width: 28rem;
+  height: 28rem;
+  top: -30%;
+  left: -8%;
+  background: rgba(47, 93, 74, 0.55);
+  animation: orb-drift 14s ease-in-out infinite alternate;
+}
+
+.hero__orb--2 {
+  width: 22rem;
+  height: 22rem;
+  top: 10%;
+  right: -6%;
+  background: rgba(154, 123, 90, 0.35);
+  animation: orb-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+.hero__mesh {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, black 20%, transparent 95%);
+  opacity: 0.35;
+  animation: mesh-shift 22s linear infinite;
+  pointer-events: none;
+}
+
+.cover-dash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 0.85fr;
+  gap: 0.85rem;
+  align-content: center;
+  padding: calc(var(--header-h) + 1rem) clamp(1rem, 3vw, 2.5rem) 4.5rem;
+}
+
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.85rem 0.95rem 0.75rem;
+  border: 1px solid rgba(61, 158, 173, 0.22);
+  border-radius: 16px;
+  background: rgba(8, 14, 20, 0.55);
+  backdrop-filter: blur(16px) saturate(1.15);
+  color: var(--white);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  animation: fade-up 0.8s var(--ease) both;
+}
+
+.chart-card:nth-child(1) { animation-delay: 0.15s; }
+.chart-card:nth-child(2) { animation-delay: 0.28s; }
+.chart-card:nth-child(3) { animation-delay: 0.4s; }
+.chart-card:nth-child(4) { animation-delay: 0.52s; }
+
+.chart-card:hover,
+.chart-card.is-active {
+  transform: translateY(-6px) scale(1.02);
+  background: rgba(10, 22, 28, 0.78);
+  border-color: rgba(61, 158, 173, 0.55);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(61, 158, 173, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.chart-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.chart-card__head span {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(238, 241, 239, 0.62);
+}
+
+.chart-card__head strong {
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: #7ed4c4;
+  text-shadow: 0 0 18px rgba(126, 212, 196, 0.35);
+}
+
+.chart-card__canvas {
+  width: 100%;
+  height: 5.5rem;
+  display: block;
+}
+
+.chart-card--quality .chart-card__canvas {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.chart-card__hint {
+  margin: 0;
+  font-size: 0.72rem;
+  color: rgba(238, 241, 239, 0.55);
+  line-height: 1.35;
+}
+
+.flow-viz {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 5.5rem;
+  padding: 0.35rem 0;
+}
+
+.flow-viz__node {
+  flex-shrink: 0;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  border: 1px solid rgba(111, 191, 150, 0.4);
+  background: rgba(47, 93, 74, 0.35);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.flow-viz__pipe {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.flow-viz__pipe i {
+  position: absolute;
+  top: -3px;
+  left: -20%;
+  width: 28%;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #6fbf96, transparent);
+  animation: flow-run 1.8s linear infinite;
+}
+
+.flow-viz__pipe:nth-of-type(4) i { animation-delay: 0.55s; }
+
+.hero__profile {
+  position: relative;
+  z-index: 2;
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) 0.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  align-items: start;
+  margin-top: calc(min(62vh, 34rem) - 5rem);
+}
+
+.hero__photo-wrap {
+  position: relative;
+  width: 8.75rem;
+  height: 8.75rem;
+  min-width: 8.75rem;
+  min-height: 8.75rem;
+  max-width: 8.75rem;
+  max-height: 8.75rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  border-radius: 1rem;
+  overflow: visible;
+  background: transparent;
+  transition: transform 0.45s var(--ease);
+}
+
+.hero__photo-wrap::before,
+.hero__photo-wrap::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero__photo-wrap::before {
+  inset: 0;
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 0 0 1px rgba(61, 158, 173, 0.35),
+    0 0 24px rgba(61, 158, 173, 0.4);
+  animation: photo-ring 3.8s var(--ease) infinite;
+}
+
+.hero__photo-wrap::after {
+  inset: -7px;
+  border-radius: 1.25rem;
+  border: 1px dashed rgba(31, 138, 110, 0.45);
+  animation: photo-ring 5.2s var(--ease) infinite reverse;
+}
+
+.hero__photo-wrap:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.hero__photo-wrap:hover::before {
+  box-shadow:
+    0 0 0 1px rgba(61, 158, 173, 0.5),
+    0 0 36px rgba(61, 158, 173, 0.55);
+}
+
+.hero__photo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  background: #1a1f26;
+}
+
+@keyframes photo-ring {
+  0%, 100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.04);
+  }
+}
+
+.hero__text {
+  min-width: 0;
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.8vw, 2.65rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+  opacity: 0;
+  animation: fade-up 0.85s var(--ease) 0.2s forwards;
+}
+
+.hero__headline {
+  font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 40rem;
+  margin-bottom: 0.4rem;
+  opacity: 0;
+  animation: fade-up 0.85s var(--ease) 0.35s forwards;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  color: var(--slate);
+  margin-bottom: 1.1rem;
+  opacity: 0;
+  animation: fade-up 0.85s var(--ease) 0.48s forwards;
+}
+
+.hero__company {
+  font-weight: 600;
+  color: var(--forest-deep);
+}
+
+.hero__meta-sep { opacity: 0.45; }
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fade-up 0.85s var(--ease) 0.6s forwards;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--forest) 0%, var(--cyan) 100%);
+  color: var(--white);
+  box-shadow: 0 10px 28px rgba(31, 138, 110, 0.28), 0 0 20px rgba(61, 158, 173, 0.15);
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, var(--forest-deep) 0%, #2a7f8c 100%);
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(61, 158, 173, 0.28);
+  color: var(--ink);
+  backdrop-filter: blur(8px);
+}
+
+.btn--ghost:hover {
+  border-color: var(--cyan);
+  color: var(--forest-deep);
+  background: rgba(61, 158, 173, 0.1);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 1.35rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 1.5rem;
+  height: 2.4rem;
+  border: 1.5px solid rgba(20, 26, 34, 0.22);
+  border-radius: 999px;
+  display: grid;
+  place-items: start center;
+  padding-top: 0.4rem;
+}
+
+.scroll-hint span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--forest);
+  animation: scroll-dot 1.8s var(--ease) infinite;
+}
+
+@keyframes scroll-dot {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.96); opacity: 0.7; }
+  70% { transform: scale(1.08); opacity: 0; }
+  100% { transform: scale(1.08); opacity: 0; }
+}
+
+@keyframes orb-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(24px, -18px) scale(1.08); }
+}
+
+@keyframes mesh-shift {
+  from { background-position: 0 0; }
+  to { background-position: 48px 48px; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes flow-run {
+  from { left: -30%; }
+  to { left: 110%; }
+}
+
+/* About + sections */
+.about {
+  max-width: 46rem;
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.35rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.about:hover {
+  z-index: 8;
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(61, 158, 173, 0.28);
+  box-shadow: 0 28px 70px rgba(14, 20, 28, 0.16), 0 0 40px rgba(61, 158, 173, 0.16);
+}
+
+.about p { color: var(--slate); font-size: 1.05rem; }
+
+.about__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.about__contacts a {
+  font-weight: 500;
+  color: var(--forest-deep);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s var(--ease);
+}
+
+.about__contacts a:hover { border-bottom-color: rgba(30, 61, 50, 0.35); }
+
+.section {
+  padding: clamp(4.5rem, 10vw, 7.5rem) clamp(1.25rem, 4vw, 3rem);
+  background: rgba(243, 246, 248, 0.72);
+  backdrop-filter: blur(2px);
+  position: relative;
+  z-index: 1;
+}
+
+.section:hover { z-index: 6; }
+
+.section--alt {
+  background: linear-gradient(180deg, rgba(232, 238, 242, 0.55) 0%, rgba(236, 242, 245, 0.7) 50%, rgba(230, 238, 240, 0.6) 100%);
+}
+
+.section__inner {
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  border-radius: 22px;
+  border: 1px solid transparent;
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), background 0.45s var(--ease), border-color 0.45s var(--ease);
+}
+
+.section:hover .section__inner {
+  transform: translateY(-10px) scale(1.015);
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(61, 158, 173, 0.22);
+  box-shadow: 0 32px 80px rgba(14, 20, 28, 0.14), 0 0 48px rgba(61, 158, 173, 0.12);
+}
+
+.section__header {
+  max-width: 36rem;
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.section__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.65rem;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.section__lead { color: var(--slate); font-size: 1.05rem; }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-left: 2px solid rgba(61, 158, 173, 0.2);
+  margin-left: 0.35rem;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: 1.15rem 1.25rem 1.15rem 1.75rem;
+  margin-left: -0.15rem;
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.timeline__item:hover {
+  z-index: 10;
+  transform: translateY(-8px) scale(1.025);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(61, 158, 173, 0.3);
+  box-shadow: 0 28px 70px rgba(14, 20, 28, 0.16), 0 0 40px rgba(61, 158, 173, 0.18);
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 1.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--forest);
+  box-shadow: 0 0 0 4px rgba(243, 246, 248, 0.9), 0 0 12px rgba(61, 158, 173, 0.55);
+}
+
+.timeline__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.timeline__meta time {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.timeline__place { font-size: 0.9rem; color: var(--slate); }
+
+.timeline__body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.timeline__body p {
+  color: var(--slate);
+  max-width: 42rem;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tags li {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.7rem;
+  color: var(--forest-deep);
+  background: rgba(61, 158, 173, 0.12);
+  border: 1px solid rgba(61, 158, 173, 0.18);
+  border-radius: 4px;
+}
+
+.formation { display: grid; gap: 1rem; }
+
+.formation__item {
+  padding: 1.35rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.formation__item:hover {
+  z-index: 10;
+  transform: translateY(-8px) scale(1.025);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(61, 158, 173, 0.3);
+  box-shadow: 0 28px 70px rgba(14, 20, 28, 0.16), 0 0 40px rgba(61, 158, 173, 0.18);
+}
+
+.formation__year {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.formation__item h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.formation__school {
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.formation__item p:last-child {
+  color: var(--slate);
+  max-width: 40rem;
+}
+
+.languages {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 36rem;
+}
+
+.languages__item {
+  padding: 1.1rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.languages__item:hover {
+  z-index: 10;
+  transform: translateY(-8px) scale(1.025);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(61, 158, 173, 0.3);
+  box-shadow: 0 28px 70px rgba(14, 20, 28, 0.16), 0 0 40px rgba(61, 158, 173, 0.18);
+}
+
+.languages__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.55rem;
+  gap: 1rem;
+}
+
+.languages__top strong { font-size: 1.1rem; font-weight: 600; }
+.languages__top span { font-size: 0.9rem; color: var(--slate); }
+
+.languages__bar {
+  height: 4px;
+  background: rgba(20, 26, 34, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.languages__bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--forest-deep), var(--forest));
+  border-radius: inherit;
+  transition: width 1.1s var(--ease);
+}
+
+.languages__item.is-visible .languages__bar span { width: var(--level); }
+
+.site-footer {
+  background: linear-gradient(180deg, #070b10 0%, #0a1218 100%);
+  color: rgba(238, 241, 239, 0.78);
+  padding: 3rem clamp(1.25rem, 4vw, 3rem);
+  border-top: 1px solid rgba(61, 158, 173, 0.2);
+}
+
+.site-footer__inner {
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.site-footer__links a {
+  font-weight: 500;
+  color: var(--white);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s var(--ease);
+}
+
+.site-footer__links a:hover { border-bottom-color: rgba(255, 255, 255, 0.45); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal.is-visible:hover {
+  transform: translateY(-8px) scale(1.025);
+  transition-delay: 0s;
+}
+
+.about.reveal.is-visible:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.reveal[data-delay="1"] { transition-delay: 0.1s; }
+.reveal[data-delay="2"] { transition-delay: 0.2s; }
+.reveal[data-delay="3"] { transition-delay: 0.3s; }
+
+@media (max-width: 1100px) {
+  .cover-dash { grid-template-columns: 1fr 1fr; gap: 0.7rem; padding-bottom: 5rem; }
+}
+
+@media (max-width: 820px) {
+  .cover-dash {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+    padding: calc(var(--header-h) + 0.5rem) 0.85rem 4rem;
+  }
+  .chart-card--flow,
+  .chart-card--quality { display: none; }
+  .chart-card__hint { display: none; }
+  .chart-card__canvas { height: 4.25rem; }
+
+  .hero__profile {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    margin-top: calc(min(48vh, 22rem) - 4rem);
+  }
+  .hero__cover { height: min(48vh, 22rem); }
+  .hero__photo-wrap {
+    width: 8rem;
+    height: 8rem;
+    min-width: 8rem;
+    min-height: 8rem;
+    max-width: 8rem;
+    max-height: 8rem;
+  }
+  .hero__text { margin-top: 0.85rem; }
+  .hero__actions, .hero__meta, .about__contacts { justify-content: center; }
+  .timeline__item { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+  .site-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.25rem 1.25rem;
+    background: rgba(247, 248, 246, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+  }
+  .site-nav.is-open {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .site-nav a {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header:not(.is-scrolled) .logo { color: var(--white); }
+  .site-header:not(.is-scrolled) .nav-toggle span { background: var(--white); }
+}
+
+@media (hover: none) {
+  .section:hover .section__inner,
+  .about:hover,
+  .timeline__item:hover,
+  .formation__item:hover,
+  .languages__item:hover,
+  .reveal.is-visible:hover {
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    border-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .fx__aurora, .fx__grid, .scroll-hint span,
+  .hero__orb, .hero__mesh, .chart-card, .flow-viz__pipe i,
+  .hero__photo-wrap::before, .hero__photo-wrap::after { animation: none !important; }
+  .fx__particles { display: none; }
+  .hero__name, .hero__headline, .hero__meta, .hero__actions {
+    opacity: 1; transform: none; animation: none;
+  }
+  .section:hover .section__inner,
+  .about:hover,
+  .timeline__item:hover,
+  .formation__item:hover,
+  .languages__item:hover,
+  .reveal.is-visible:hover { transform: none; transition: none; }
+  .languages__bar span { transition: none; width: var(--level); }
+}
+
+</style>
+</head>
+<body>
+  <div class="fx" aria-hidden="true">
+    <div class="fx__aurora"></div>
+    <div class="fx__grid"></div>
+    <div class="fx__scan"></div>
+    <canvas class="fx__particles" id="fx-particles"></canvas>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="topo">
+    <a class="logo" href="#topo">GO</a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#formacao">Formação</a>
+      <a href="#idiomas">Idiomas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero__cover">
+        <canvas class="hero__canvas" id="cover-chart" aria-hidden="true"></canvas>
+        <div class="hero__orb hero__orb--1" data-parallax="0.04" aria-hidden="true"></div>
+        <div class="hero__orb hero__orb--2" data-parallax="0.07" aria-hidden="true"></div>
+        <div class="hero__mesh" aria-hidden="true"></div>
+
+        <div class="cover-dash" aria-label="Dashboard de engenharia de produção">
+          <button type="button" class="chart-card chart-card--line is-active" data-chart="oee">
+            <header class="chart-card__head">
+              <span>OEE em tempo real</span>
+              <strong><span data-live="oee">87.2</span>%</strong>
+            </header>
+            <canvas class="chart-card__canvas" data-mini="oee" width="280" height="90"></canvas>
+            <p class="chart-card__hint">Disponibilidade × Performance × Qualidade</p>
+          </button>
+
+          <button type="button" class="chart-card chart-card--bars" data-chart="throughput">
+            <header class="chart-card__head">
+              <span>Throughput por posto</span>
+              <strong><span data-live="thr">142</span> un/h</strong>
+            </header>
+            <canvas class="chart-card__canvas" data-mini="bars" width="280" height="90"></canvas>
+            <p class="chart-card__hint">Balanceamento de linha · PCP</p>
+          </button>
+
+          <button type="button" class="chart-card chart-card--flow" data-chart="flow">
+            <header class="chart-card__head">
+              <span>Fluxo PCP → Estoque → Produção</span>
+              <strong>Lead −<span data-live="lead">28</span>%</strong>
+            </header>
+            <div class="flow-viz" aria-hidden="true">
+              <span class="flow-viz__node">PCP</span>
+              <span class="flow-viz__pipe"><i></i></span>
+              <span class="flow-viz__node">Estoque</span>
+              <span class="flow-viz__pipe"><i></i></span>
+              <span class="flow-viz__node">Produção</span>
+            </div>
+            <p class="chart-card__hint">Supply chain &amp; intralogística</p>
+          </button>
+
+          <button type="button" class="chart-card chart-card--quality" data-chart="quality">
+            <header class="chart-card__head">
+              <span>Qualidade / NC</span>
+              <strong><span data-live="qual">99.1</span>%</strong>
+            </header>
+            <canvas class="chart-card__canvas" data-mini="donut" width="120" height="90"></canvas>
+            <p class="chart-card__hint">Controle de perdas e conformidade</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__profile">
+        <div class="hero__photo-wrap">
+          <img
+            class="hero__photo"
+            src="assets/foto.png"
+            alt="Gabriel Otávio de Oliveira"
+            width="200"
+            height="200"
+          />
+        </div>
+
+        <div class="hero__text">
+          <h1 class="hero__name">Gabriel Otávio de Oliveira</h1>
+          <p class="hero__headline">
+            Engenharia de Produção · Planejamento de Produção (PCP) · Supply Chain &amp; Intralogística · Melhoria Contínua
+          </p>
+          <p class="hero__meta">
+            <span class="hero__company">Analista de PCP</span>
+            <span class="hero__meta-sep" aria-hidden="true">·</span>
+            <span>JSL S.A.</span>
+            <span class="hero__meta-sep" aria-hidden="true">·</span>
+            <span>Operações aeronáuticas</span>
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#experiencia">Ver trajetória</a>
+            <a
+              class="btn btn--ghost"
+              href="https://www.linkedin.com/in/gabriel-otavio-deoliveira/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >LinkedIn</a>
+            <a class="btn btn--ghost" href="mailto:Gaotavio.oliveira@gmail.com">E-mail</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#sobre" aria-label="Ir para sobre">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="section__inner">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Sobre</p>
+          <h2 class="section__title">Quem sou</h2>
+        </header>
+        <div class="about reveal">
+          <p>
+            Profissional de Engenharia de Produção com atuação em Planejamento e Controle da Produção (PCP)
+            em operações logísticas no segmento aeronáutico, em ambientes de alta complexidade, criticidade
+            operacional e foco em performance.
+          </p>
+          <p>
+            Experiência na gestão de fluxo de materiais, planejamento de demanda e priorização de atividades,
+            conectando supply chain e operação para garantir atendimento às necessidades produtivas e cumprimento
+            de prazos. Atuação sólida em gestão de estoques, intralogística e controle de produção, com foco em
+            eficiência, acuracidade de inventário, redução de lead time e melhoria contínua.
+          </p>
+          <p>
+            Reconhecido pela organização, tomada de decisão em cenários críticos e direcionamento de equipes
+            operacionais, contribuindo para mitigação de riscos, resolução de gargalos logísticos e aumento da
+            produtividade. Rotinas de planejamento, acompanhamento de KPIs e alinhamento com áreas produtivas.
+          </p>
+          <ul class="about__contacts">
+            <li><a href="mailto:Gaotavio.oliveira@gmail.com">Gaotavio.oliveira@gmail.com</a></li>
+            <li><a href="tel:+5524998224436">(24) 99822-4436</a></li>
+            <li>Disponibilidade imediata e para viagens · CNH AB</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="experiencia">
+      <div class="section__inner">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Experiência</p>
+          <h2 class="section__title">Experiência profissional</h2>
+          <p class="section__lead">Trajetória em PCP, infraestrutura e qualidade industrial.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__meta">
+              <time datetime="2023-02">Fev/2023 — Atual</time>
+              <span class="timeline__place">JSL S.A.</span>
+            </div>
+            <div class="timeline__body">
+              <h3>Analista de PCP</h3>
+              <p>
+                Planejamento e controle das atividades logísticas voltadas à manutenção de motores
+                aeronáuticos. Acompanhamento diário das prioridades de produção e estocagem, alinhando PCP,
+                estoque e produção. Coordenação de auxiliares de PCP nos estoques de materiais aeronáuticos,
+                consumíveis, acessórios e aero, além de expedição e resíduos.
+              </p>
+              <ul class="tags">
+                <li>PCP</li>
+                <li>Supply Chain</li>
+                <li>Intralogística</li>
+                <li>KPIs</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__meta">
+              <time datetime="2019-12">Dez/2019 — Mar/2021</time>
+              <span class="timeline__place">Serviço Social Autônomo Alcides Carneiro</span>
+            </div>
+            <div class="timeline__body">
+              <h3>Encarregado de Infraestrutura</h3>
+              <p>
+                Análise e proposição de soluções e manutenções preventivas e corretivas para otimizar
+                ambientes prediais e estruturais. Coordenação e implantação via Ordens de Serviço, com
+                interação entre áreas para garantir o funcionamento operacional.
+              </p>
+              <ul class="tags">
+                <li>Infraestrutura</li>
+                <li>Manutenção</li>
+                <li>Ordens de Serviço</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__meta">
+              <time datetime="2011-03">Mar/2011 — Nov/2019</time>
+              <span class="timeline__place">Mustad Brasil — Mattheis Borg</span>
+            </div>
+            <div class="timeline__body">
+              <h3>Operador de Produção / Inspetor de Qualidade</h3>
+              <p>
+                Como Operador, responsável pela fabricação de peças e acessórios. Como Inspetor da Qualidade,
+                conduzi inspeções físicas em todas as etapas, proteção e embalagem, relatórios de não
+                conformidades, conferência por amostragem, lotes e etiquetagens, além de prevenção e controle
+                de desperdícios e perdas.
+              </p>
+              <ul class="tags">
+                <li>Produção</li>
+                <li>Qualidade</li>
+                <li>Não conformidades</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="formacao">
+      <div class="section__inner">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Formação</p>
+          <h2 class="section__title">Formação acadêmica e cursos</h2>
+          <p class="section__lead">Graduação e aperfeiçoamentos em produção, projetos e qualidade.</p>
+        </header>
+
+        <div class="formation">
+          <article class="formation__item reveal">
+            <span class="formation__year">Cursando</span>
+            <h3>Pós-graduação em Estratégia e Desenvolvimento de Soluções de IA</h3>
+            <p class="formation__school">Em andamento</p>
+            <p>
+              Formação voltada à aplicação de inteligência artificial em estratégia,
+              desenvolvimento de soluções e apoio à tomada de decisão em operações.
+            </p>
+          </article>
+
+          <article class="formation__item reveal" data-delay="1">
+            <span class="formation__year">Graduação</span>
+            <h3>Engenharia de Produção</h3>
+            <p class="formation__school">Universidade Estácio de Sá</p>
+            <p>
+              Formação voltada à produção industrial, gestão de operações, processos e melhoria contínua.
+            </p>
+          </article>
+
+          <article class="formation__item reveal" data-delay="2">
+            <span class="formation__year">Jun/2021</span>
+            <h3>Lean Six Sigma White Belt</h3>
+            <p class="formation__school">MF Treinamentos — ASQ Certified MFB · 5h</p>
+            <p>Fundamentos do DMAIC aplicados à melhoria de processos.</p>
+          </article>
+
+          <article class="formation__item reveal" data-delay="3">
+            <span class="formation__year">Ago–Nov/2020</span>
+            <h3>Gestão de Projetos e Custos</h3>
+            <p class="formation__school">FGV · cursos de extensão</p>
+            <p>
+              Gestão de projetos, riscos e fundamentos de gestão de custos.
+            </p>
+          </article>
+
+          <article class="formation__item reveal">
+            <span class="formation__year">2013 — 2017</span>
+            <h3>Mecânica Industrial e SolidWorks</h3>
+            <p class="formation__school">SENAI</p>
+            <p>
+              Manutenção e Mecânica Industrial (320h) e SolidWorks aplicado à mecânica industrial (48h).
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="idiomas">
+      <div class="section__inner">
+        <header class="section__header reveal">
+          <p class="section__eyebrow">Idiomas</p>
+          <h2 class="section__title">Idiomas</h2>
+          <p class="section__lead">Comunicação no dia a dia e evolução contínua no inglês.</p>
+        </header>
+
+        <ul class="languages">
+          <li class="languages__item reveal">
+            <div class="languages__top">
+              <strong>Português</strong>
+              <span>Nativo</span>
+            </div>
+            <div class="languages__bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <span style="--level: 100%"></span>
+            </div>
+          </li>
+          <li class="languages__item reveal" data-delay="1">
+            <div class="languages__top">
+              <strong>Inglês</strong>
+              <span>Básico — cursando</span>
+            </div>
+            <div class="languages__bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+              <span style="--level: 30%"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>Office e Excel (intermediário) · Aberto a oportunidades em produção e PCP</p>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/gabriel-otavio-deoliveira/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:Gaotavio.oliveira@gmail.com">E-mail</a>
+        <a href="#topo">Voltar ao topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+(() => {
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+  const navLinks = document.querySelectorAll(".site-nav a");
+  const sections = document.querySelectorAll("main section[id]");
+  const reveals = document.querySelectorAll(".reveal");
+  const hero = document.querySelector(".hero");
+  const parallaxEls = document.querySelectorAll("[data-parallax]");
+  const chartCards = document.querySelectorAll(".chart-card");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const onScroll = () => {
+    const scrolled = window.scrollY > 40;
+    header?.classList.toggle("is-scrolled", scrolled);
+    header?.classList.toggle("on-cover", !scrolled);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  toggle?.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    nav?.classList.toggle("is-open", !open);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      toggle?.setAttribute("aria-expanded", "false");
+      nav?.classList.remove("is-open");
+    });
+  });
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+        });
+      });
+    },
+    { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+  );
+  sections.forEach((section) => sectionObserver.observe(section));
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+  reveals.forEach((el) => revealObserver.observe(el));
+
+  chartCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      chartCards.forEach((c) => c.classList.remove("is-active"));
+      card.classList.add("is-active");
+    });
+  });
+
+  if (!reduceMotion && hero && parallaxEls.length) {
+    let raf = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    const applyParallax = () => {
+      parallaxEls.forEach((el) => {
+        const depth = Number(el.getAttribute("data-parallax")) || 0.04;
+        el.style.transform = `translate3d(${targetX * depth * 40}px, ${targetY * depth * 40}px, 0)`;
+      });
+      raf = 0;
+    };
+
+    hero.addEventListener("pointermove", (event) => {
+      const rect = hero.getBoundingClientRect();
+      targetX = (event.clientX - rect.left) / rect.width - 0.5;
+      targetY = (event.clientY - rect.top) / rect.height - 0.5;
+      if (!raf) raf = requestAnimationFrame(applyParallax);
+    }, { passive: true });
+
+    hero.addEventListener("pointerleave", () => {
+      targetX = 0;
+      targetY = 0;
+      if (!raf) raf = requestAnimationFrame(applyParallax);
+    }, { passive: true });
+  }
+
+  const cover = document.querySelector(".hero__cover");
+  const bgCanvas = document.getElementById("cover-chart");
+  const live = {
+    oee: document.querySelector('[data-live="oee"]'),
+    thr: document.querySelector('[data-live="thr"]'),
+    lead: document.querySelector('[data-live="lead"]'),
+    qual: document.querySelector('[data-live="qual"]'),
+  };
+  const miniOee = document.querySelector('[data-mini="oee"]');
+  const miniBars = document.querySelector('[data-mini="bars"]');
+  const miniDonut = document.querySelector('[data-mini="donut"]');
+
+  const series = {
+    oee: Array.from({ length: 40 }, (_, i) => 82 + Math.sin(i / 3) * 4 + Math.random() * 2),
+    bars: [62, 78, 91, 70, 84, 95],
+    quality: 0.991,
+  };
+
+  const resizeBg = () => {
+    if (!bgCanvas || !cover) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const { width, height } = cover.getBoundingClientRect();
+    bgCanvas.width = Math.floor(width * dpr);
+    bgCanvas.height = Math.floor(height * dpr);
+    bgCanvas.style.width = `${width}px`;
+    bgCanvas.style.height = `${height}px`;
+    bgCanvas.getContext("2d").setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+
+  const drawBgChart = (t) => {
+    if (!bgCanvas || !cover) return;
+    const ctx = bgCanvas.getContext("2d");
+    const { width, height } = cover.getBoundingClientRect();
+    ctx.clearRect(0, 0, width, height);
+
+    ctx.strokeStyle = "rgba(255,255,255,0.05)";
+    ctx.lineWidth = 1;
+    for (let x = 40; x < width; x += 48) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
+    }
+    for (let y = 40; y < height; y += 36) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
+    }
+
+    const points = 48;
+    ctx.beginPath();
+    for (let i = 0; i <= points; i++) {
+      const x = (i / points) * width;
+      const y = height * 0.55 + Math.sin(i * 0.28 + t * 0.0018) * 28 + Math.sin(i * 0.11 + t * 0.0011) * 16;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.strokeStyle = "rgba(126,212,196,0.4)";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.lineTo(width, height);
+    ctx.lineTo(0, height);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(0, height * 0.4, 0, height);
+    grad.addColorStop(0, "rgba(61,158,173,0.2)");
+    grad.addColorStop(1, "rgba(61,158,173,0)");
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.beginPath();
+    for (let i = 0; i <= points; i++) {
+      const x = (i / points) * width;
+      const y = height * 0.42 + Math.cos(i * 0.22 + t * 0.0022) * 22 + Math.sin(i * 0.09 + t * 0.0009) * 10;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.strokeStyle = "rgba(122,154,171,0.45)";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  };
+
+  const drawSparkline = (canvas, data, t) => {
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    const min = Math.min(...data) - 2;
+    const max = Math.max(...data) + 2;
+    const range = max - min || 1;
+    ctx.beginPath();
+    data.forEach((v, i) => {
+      const x = (i / (data.length - 1)) * (w - 8) + 4;
+      const y = h - 8 - ((v - min) / range) * (h - 16);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = "#7ed4c4";
+    ctx.lineWidth = 2;
+    ctx.lineJoin = "round";
+    ctx.stroke();
+    const lastX = w - 4;
+    const lastY = h - 8 - ((data[data.length - 1] - min) / range) * (h - 16);
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 2.5 + Math.sin(t * 0.006) * 1.2, 0, Math.PI * 2);
+    ctx.fillStyle = "#b8f0e4";
+    ctx.fill();
+  };
+
+  const drawBars = (canvas, data, t) => {
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    const gap = 8;
+    const barW = (w - gap * (data.length + 1)) / data.length;
+    data.forEach((base, i) => {
+      const val = Math.max(20, Math.min(100, base + Math.sin(t * 0.003 + i * 0.9) * 4));
+      const barH = (val / 100) * (h - 12);
+      const x = gap + i * (barW + gap);
+      const y = h - barH - 4;
+      const g = ctx.createLinearGradient(0, y, 0, h);
+      g.addColorStop(0, "#7ed4c4");
+      g.addColorStop(1, "#1f8a6e");
+      ctx.fillStyle = g;
+      const r = 4;
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + barW, y, x + barW, y + barH, r);
+      ctx.arcTo(x + barW, y + barH, x, y + barH, r);
+      ctx.arcTo(x, y + barH, x, y, r);
+      ctx.arcTo(x, y, x + barW, y, r);
+      ctx.closePath();
+      ctx.fill();
+    });
+  };
+
+  const drawDonut = (canvas, value, t) => {
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    const cx = w / 2;
+    const cy = h / 2;
+    const radius = Math.min(w, h) * 0.34;
+    const pct = Math.min(0.995, value + Math.sin(t * 0.0025) * 0.008);
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgba(255,255,255,0.12)";
+    ctx.lineWidth = 8;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * pct);
+    ctx.strokeStyle = "#3d9ead";
+    ctx.lineCap = "round";
+    ctx.lineWidth = 8;
+    ctx.stroke();
+  };
+
+  let lastPush = 0;
+  const tick = (t) => {
+    if (t - lastPush > 700) {
+      lastPush = t;
+      series.oee.push(Math.max(78, Math.min(96, series.oee[series.oee.length - 1] + (Math.random() - 0.45) * 1.8)));
+      if (series.oee.length > 40) series.oee.shift();
+      series.bars = series.bars.map((v, i) => Math.max(45, Math.min(100, v + Math.sin(t * 0.001 + i) * 0.8)));
+    }
+    const oeeNow = series.oee[series.oee.length - 1];
+    if (live.oee) live.oee.textContent = oeeNow.toFixed(1);
+    if (live.thr) live.thr.textContent = String(Math.round(130 + Math.sin(t * 0.0015) * 12 + oeeNow * 0.1));
+    if (live.lead) live.lead.textContent = String(Math.round(26 + Math.sin(t * 0.0012) * 2));
+    if (live.qual) live.qual.textContent = (99 + Math.sin(t * 0.001) * 0.2).toFixed(1);
+    drawBgChart(t);
+    drawSparkline(miniOee, series.oee, t);
+    drawBars(miniBars, series.bars, t);
+    drawDonut(miniDonut, series.quality, t);
+    if (!reduceMotion) requestAnimationFrame(tick);
+  };
+
+  resizeBg();
+  window.addEventListener("resize", resizeBg);
+
+  if (reduceMotion) {
+    drawBgChart(0);
+    drawSparkline(miniOee, series.oee, 0);
+    drawBars(miniBars, series.bars, 0);
+    drawDonut(miniDonut, series.quality, 0);
+  } else {
+    requestAnimationFrame(tick);
+  }
+
+  const fxCanvas = document.getElementById("fx-particles");
+  if (fxCanvas && !reduceMotion) {
+    const fxCtx = fxCanvas.getContext("2d");
+    let particles = [];
+    let w = 0;
+    let h = 0;
+
+    const resizeFx = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth;
+      h = window.innerHeight;
+      fxCanvas.width = Math.floor(w * dpr);
+      fxCanvas.height = Math.floor(h * dpr);
+      fxCanvas.style.width = `${w}px`;
+      fxCanvas.style.height = `${h}px`;
+      fxCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.min(48, Math.floor((w * h) / 28000));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.6 + 0.4,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25 - 0.05,
+        a: Math.random() * 0.35 + 0.1,
+      }));
+    };
+
+    const drawFx = () => {
+      fxCtx.clearRect(0, 0, w, h);
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < -10) p.x = w + 10;
+        if (p.x > w + 10) p.x = -10;
+        if (p.y < -10) p.y = h + 10;
+        if (p.y > h + 10) p.y = -10;
+        fxCtx.beginPath();
+        fxCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        fxCtx.fillStyle = `rgba(61, 158, 173, ${p.a})`;
+        fxCtx.fill();
+      });
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i];
+          const b = particles[j];
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (dist < 110) {
+            fxCtx.beginPath();
+            fxCtx.moveTo(a.x, a.y);
+            fxCtx.lineTo(b.x, b.y);
+            fxCtx.strokeStyle = `rgba(31, 138, 110, ${0.08 * (1 - dist / 110)})`;
+            fxCtx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(drawFx);
+    };
+
+    resizeFx();
+    window.addEventListener("resize", resizeFx);
+    requestAnimationFrame(drawFx);
+  }
+})();
+
+</script>
+</body>
+</html>
